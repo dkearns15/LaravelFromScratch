@@ -20,7 +20,10 @@ class PostController extends Controller
         // $post->title = request('title');
         // $post->body = request('body');
         // $post->save();
-
+        $this->validate(request(), [
+            'title' => 'required',
+            'body' => 'required'
+        ]);
         Post::create(request(['title', 'body']));
         //Post::create([
         //    'title' => request('title'),

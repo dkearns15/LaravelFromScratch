@@ -14,7 +14,10 @@
             <label for="exampleInputPassword1">Post Body</label>
             <textarea id="body" name="body" rows="8" cols="80" class="form-control"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Publish</button>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Publish</button>
+        </div>
+        @include('layouts.errors')
     </form>
 </div>
 @endsection
