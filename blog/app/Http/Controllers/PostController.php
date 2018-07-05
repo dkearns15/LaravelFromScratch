@@ -10,7 +10,7 @@ class PostController extends Controller
         $posts = \App\Post::latest()->get();
         return view('posts.index', compact('posts'));
     }
-    public function show(Post $post){
+    public function show(\App\Post $post){
         return view('posts.show', compact('post'));
     }
     public function create(){
