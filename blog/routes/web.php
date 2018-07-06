@@ -12,8 +12,8 @@
 */
 
 Route::get('/', 'PostController@index')->name('home');
-Route::get('/posts/{post}', 'PostController@show');
 Route::get('/posts/create', 'PostController@create');
+Route::get('/posts/{post}', 'PostController@show');
 Route::post('/posts', 'PostController@store');
 
 Route::post('/posts/{post}/comments', 'CommentsController@store');
@@ -23,3 +23,4 @@ Route::post('/register', 'RegistrationController@store');
 
 Route::get('/login', 'SessionsController@create');
 Route::get('/logout', 'SessionsController@destroy');
+Route::post('/login', 'SessionsController@store');

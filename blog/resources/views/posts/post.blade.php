@@ -4,7 +4,11 @@
         {{$post->title}}
         </a>
     </h2>
-    <p class="blog-post-meta">{{$post->created_at->toFormattedDateString()}} by <a href="#">{{$post->id}}</a></p>
+    <p class="blog-post-meta">
+        Posted by
+        <a href="#">{{$post->user->name}}</a> on
+        {{$post->created_at->toFormattedDateString()}}
+    </p>
     <p>{{$post->body}}</p>
 </div>
 <!-- /.blog-post -->
