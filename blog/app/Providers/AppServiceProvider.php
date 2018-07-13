@@ -25,6 +25,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(Stripe::class, function(){
+            return new \App\Billing\Stripe(config('services.stripe.secret'));
+        });
     }
 }
