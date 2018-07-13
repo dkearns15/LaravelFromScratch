@@ -12,6 +12,7 @@ class PostController extends Controller
     }
     public function index(){
 
+
         $posts = \App\Post::latest()
             ->filter(request(['month', 'year']))
             ->get();
@@ -49,7 +50,7 @@ class PostController extends Controller
         //    'title' => request('title'),
         //    'body' => request('body')
         //]);
-
+        session()->flash('message', 'You have made a post!');
         return redirect('/');
     }
 }
