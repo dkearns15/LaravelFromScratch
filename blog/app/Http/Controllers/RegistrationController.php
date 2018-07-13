@@ -11,12 +11,7 @@ class RegistrationController extends Controller
     public function create(){
         return view('registrations.create');
     }
-    public function store(){
-        $this->validate(request(), [
-            'name' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|confirmed'
-        ]);
+    public function store(RegistrationRequest $request){
 
         $user = User::create([
             'name' => request('name'),
