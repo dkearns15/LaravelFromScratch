@@ -12,7 +12,6 @@ class PostController extends Controller
     }
     public function index(){
 
-
         $posts = \App\Post::latest()
             ->filter(request(['month', 'year']))
             ->get();
