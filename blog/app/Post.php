@@ -12,6 +12,9 @@ class Post extends Model
     public function addComment($body){
         $this->comments()->create(compact('body'));
     }
+    public function addTag($tag){
+        $post->tags()->attach($tag);
+    }
     public function user(){
         return $this->belongsTo(User::class);
     }
@@ -34,5 +37,9 @@ class Post extends Model
             ->get()
             ->toArray();
 
+    }
+
+    public function tags(){
+        return $this->belongsToMany(Tag::class);
     }
 }
